@@ -18,6 +18,14 @@ MAIN : {
     my $new_counter = 0;
 
     while (defined($line1)){
+
+        if ($line1 =~ /^(\@)PG/){
+            print $line1;
+            $line1 = <FILE1>;
+            $line2 = <FILE2>;
+            next;
+        }
+
         if (($line1 =~ /^(\@)SQ/) || ($line1 =~ /^(\@)RG/)){
             if ($line1 ne $line2){
                 print($line1);
