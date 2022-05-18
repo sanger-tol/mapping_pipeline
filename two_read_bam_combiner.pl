@@ -18,7 +18,7 @@ MAIN : {
     my $new_counter = 0;
 
     while (defined($line1)){
-        if ($line1 =~ /^(\@)SQ/){
+        if (($line1 =~ /^(\@)SQ/) || ($line1 =~ /^(\@)RG/)){
             if ($line1 ne $line2){
                 print($line1);
                 print($line2);
